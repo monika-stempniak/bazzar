@@ -2,4 +2,4 @@
 
 ### API
 
-https://my-json-server.typicode.com/typicode/monika-stempniak/bazzar
+https://my-json-server.typicode.com/monika-stempniak/bazzar
