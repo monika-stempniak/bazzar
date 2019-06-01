@@ -7,6 +7,8 @@ import { ProductsComponent } from "./products/products.component";
 import { BasketComponent } from "./basket/basket.component";
 import { ContactComponent } from "./contact/contact.component";
 import { ProductDetailsComponent } from "./product-details/product-details.component";
+import { ProductsService } from "./products.service";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -16,8 +18,8 @@ import { ProductDetailsComponent } from "./product-details/product-details.compo
     ContactComponent,
     ProductDetailsComponent
   ],
-  imports: [BrowserModule, AppRoutingModule],
-  providers: [],
+  imports: [BrowserModule, HttpClientModule, AppRoutingModule],
+  providers: [ProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -1,8 +1,12 @@
 <div style="text-align:center">
   <h2>Products list</h2>
   <ul>
-    <li>
-      <a>Products</a>
+    <li *ngFor="let product of products | async">
+      <a href="#">
+        <img [src]="product.imgUrl" width="200px" />
+        <h3>{{ product.name }}</h3>
+        <h4>{{ product.price }}</h4>
+      </a>
     </li>
   </ul>
 </div>
