@@ -1,5 +1,8 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { TruncateModule } from "@yellowspot/ng-truncate";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { ToastrModule } from "ngx-toastr";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -9,6 +12,7 @@ import { ContactComponent } from "./contact/contact.component";
 import { ProductDetailsComponent } from "./product-details/product-details.component";
 import { ProductsService } from "./products.service";
 import { HttpClientModule } from "@angular/common/http";
+import { BasketService } from "./basket.service";
 
 @NgModule({
   declarations: [
@@ -18,8 +22,15 @@ import { HttpClientModule } from "@angular/common/http";
     ContactComponent,
     ProductDetailsComponent
   ],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule],
-  providers: [ProductsService],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    TruncateModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
+  ],
+  providers: [ProductsService, BasketService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

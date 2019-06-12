@@ -2,11 +2,12 @@
   <h2>Products list</h2>
   <ul>
     <li *ngFor="let product of products | async">
-      <a href="#">
+      <a routerLink="/products/{{ product.id }}">
         <img [src]="product.imgUrl" width="200px" />
-        <h3>{{ product.name }}</h3>
-        <h4>{{ product.price }}</h4>
+        <h3>{{ product.name | truncate: 20:"..." }}</h3>
+        <h4>{{ product.price | currency: "EUR" }}</h4>
       </a>
+      <button (click)="addToBasket(product)">Add to basket</button>
     </li>
   </ul>
 </div>

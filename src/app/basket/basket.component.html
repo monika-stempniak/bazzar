@@ -1,3 +1,10 @@
-<p>
-  basket works!
-</p>
+<section>
+  <h2>Shopping cart</h2>
+  <ul>
+    <li *ngFor="let product of basket | async">
+      <p>{{ product.name }}</p>
+      <p>{{ product.price | currency: "EUR" }}</p>
+      <button (click)="deletefromBasket(product.id)">Delete</button>
+    </li>
+  </ul>
+</section>
