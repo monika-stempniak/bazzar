@@ -29,11 +29,10 @@ export class ProductsComponent implements OnInit {
   }
 
   showSuccess() {
-    this.toastr.success("Toastr fun!");
+    this.toastr.success("Added to basket");
   }
 
   addToBasket(product: Product) {
-    this.showSuccess();
-    this.basketService.addToBasket(product).subscribe();
+    this.basketService.addToBasket(product).subscribe(() => this.showSuccess());
   }
 }

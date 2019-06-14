@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { Location } from "@angular/common";
+import { ToastrService } from "ngx-toastr";
 
 import { Product } from "../product";
 import { ProductsService } from "../products.service";
@@ -18,7 +19,8 @@ export class ProductDetailsComponent implements OnInit {
     private route: ActivatedRoute,
     private productsService: ProductsService,
     private basketService: BasketService,
-    private location: Location
+    private location: Location,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit() {
@@ -36,7 +38,11 @@ export class ProductDetailsComponent implements OnInit {
     this.location.back();
   }
 
+  showSuccess() {
+    this.toastr.success("Added to basket");
+  }
+
   addToBasket(product: Product) {
-    this.basketService.addToBasket(product).subscribe();
+    this.basketService.addToBasket(product).subscribe(() => this.showSuccess());
   }
 }

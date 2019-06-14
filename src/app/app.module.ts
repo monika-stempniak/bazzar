@@ -28,7 +28,9 @@ import { BasketService } from "./basket.service";
     AppRoutingModule,
     TruncateModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot({
+      positionClass: "toast-bottom-right"
+    })
   ],
   providers: [ProductsService, BasketService],
   bootstrap: [AppComponent]

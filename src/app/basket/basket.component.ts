@@ -22,8 +22,8 @@ export class BasketComponent implements OnInit {
     this.getBasket();
   }
 
-  showSuccess() {
-    this.toastr.success("Toastr fun!");
+  showWarning() {
+    this.toastr.warning("Removed from basket");
   }
 
   getBasket() {
@@ -31,7 +31,9 @@ export class BasketComponent implements OnInit {
   }
 
   deletefromBasket(id: number) {
-    this.showSuccess();
-    this.basketService.deletefromBasket(id).subscribe(() => this.getBasket());
+    this.basketService.deletefromBasket(id).subscribe(() => {
+      this.showWarning();
+      return this.getBasket();
+    });
   }
 }
