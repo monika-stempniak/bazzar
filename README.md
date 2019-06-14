@@ -1,5 +1,11 @@
 # Bazzar
 
-### API
+### Simple shopping cart in Angular
 
-https://my-json-server.typicode.com/monika-stempniak/bazzar
+```node
+  npm start
+```
+
+```node
+  npm run server
+```
