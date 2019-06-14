@@ -1,10 +1,12 @@
-<div style="text-align:center">
-  <button (click)="goBack()">go back</button>
-  <h2>Product details</h2>
+<div style="text-align:center" class="container wrapper">
+  <button (click)="goBack()" class="btn btn-secondary">go back</button>
+  <div>
+    <img [src]="product.imgUrl" width="400px" />
+    <h3 class="name">{{ product.name }}</h3>
+    <h4 class="price">{{ product.price | currency: "EUR" }}</h4>
 
-  <img [src]="product.imgUrl" width="200px" />
-  <h3>{{ product.name }}</h3>
-  <h4>{{ product.price | currency: "EUR" }}</h4>
-
-  <button (click)="addToBasket(product)">Add to basket</button>
+    <button (click)="addToBasket(product)" class="btn btn-pink">
+      Add to basket
+    </button>
+  </div>
 </div>

@@ -1,0 +1,26 @@
+.wrapper {
+  position: relative;
+}
+
+.name {
+  padding: 10px 10px 0 10px;
+}
+
+.price {
+  padding: 10px;
+}
+
+.btn-pink {
+  background: rgb(222, 63, 89);
+  color: white;
+
+  &:hover {
+    background: darken(rgb(222, 63, 89), 20%);
+  }
+}
+
+.btn-secondary {
+  position: absolute;
+  top: 90px;
+  left: 0;
+}

@@ -1,10 +1,12 @@
-<section>
-  <h2>Shopping cart</h2>
-  <ul>
-    <li *ngFor="let product of basket | async">
-      <p>{{ product.name }}</p>
-      <p>{{ product.price | currency: "EUR" }}</p>
-      <button (click)="deletefromBasket(product.id)">Delete</button>
+<section class="container wrapper">
+  <h2 class="title">Shopping cart</h2>
+  <ul class="item-list">
+    <li *ngFor="let product of basket | async" class="row item">
+      <p class="col-3">{{ product.name }}</p>
+      <p class="col-1 price">{{ product.price | currency: "EUR" }}</p>
+      <button (click)="deletefromBasket(product.id)" class="btn btn-danger">
+        Delete
+      </button>
     </li>
   </ul>
 </section>

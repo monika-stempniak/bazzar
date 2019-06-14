@@ -1,0 +1,22 @@
+.navbar {
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 30px;
+  font-style: oblique;
+}
+
+.title {
+  text-transform: uppercase;
+}
+
+.nav-item {
+  padding: 2px;
+  margin-left: 20px;
+}
+
+.nav-item:hover {
+  background: rgb(222, 63, 89);
+  border-radius: 5px;
+}
