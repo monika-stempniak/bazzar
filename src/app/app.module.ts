@@ -13,6 +13,7 @@ import { ProductDetailsComponent } from "./product-details/product-details.compo
 import { ProductsService } from "./products.service";
 import { HttpClientModule } from "@angular/common/http";
 import { BasketService } from "./basket.service";
+import { AppErrorHandler } from "./error-handler";
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { BasketService } from "./basket.service";
       positionClass: "toast-bottom-right"
     })
   ],
-  providers: [ProductsService, BasketService],
+  providers: [AppErrorHandler, ProductsService, BasketService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
